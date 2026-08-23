@@ -122,6 +122,15 @@ document.addEventListener('touchstart', function (e) {
 document.addEventListener('touchmove', function (e) {
   if (currentView === 'landing') {
     e.preventDefault();
+    return;
+  }
+
+  const activePanel = document.querySelectorAll('.panel')[currentPanel];
+  const currentY = e.touches[0].clientY;
+  const movingDown = currentY > touchStartY;
+
+  if (activePanel.scrollTop <= 0 && movingDown) {
+    e.preventDefault();
   }
 }, { passive: false });
 
