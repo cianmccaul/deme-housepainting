@@ -42,6 +42,7 @@ function updateStage() {
     stageTrack.classList.toggle('show-content', currentView === 'content');
     panelsTrack.style.transform = 'translateX(-' + (currentPanel * 100) + 'vw)';
     siteNav.classList.toggle('nav--docked', currentView === 'content');
+    setActiveNav();
 
     setTimeout(function () {
       siteNav.classList.remove('nav--fading');
@@ -57,14 +58,13 @@ function goToPanel(panelName) {
   currentPanel = idx;
   currentView = 'content';
   updateStage();
-  setActiveNav();
 }
 
 function goToLanding() {
   currentView = 'landing';
   updateStage();
-  setActiveNav();
 }
+
 
 // ---- Wheel scroll ----
 window.addEventListener('wheel', function (e) {
