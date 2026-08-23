@@ -1,4 +1,8 @@
 #content-wrap {
-    min-height: 100vh;
-    background: var(--color-white);
+  min-height: 100dvh;
+  background: var(--color-white);
+}
+
+.panel {
+    padding-top: 110px;
 }
