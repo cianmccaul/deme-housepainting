@@ -19,11 +19,14 @@
   /* ---- Paint-tab nav — fixed 190px width won't fit 3-across on a phone ---- */
   .nav__tabs a {
     width: auto;
-    padding: var(--space-2) var(--space-3);
-    font-size: var(--text-xs);
+    padding: var(--space-1) var(--space-2);
+    font-size: 0.7rem;
+    letter-spacing: var(--tracking-normal);
   }
   .nav__tabs {
     gap: 4px;
+    padding-inline: var(--space-2);
+    max-width: 100vw;
   }
 
   /* ---- About Us — stack instead of side-by-side ---- */
@@ -43,5 +46,11 @@
   }
   .gallery__title {
     font-size: var(--text-xl);
+  }
+  #logo-corner {
+    display: none;
+  }
+  #menu-corner.is-hidden {
+    display: none;
   }
 }

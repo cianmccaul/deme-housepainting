@@ -3,7 +3,6 @@
   top: var(--space-3);
   left: var(--space-4);
   z-index: 200;
-  transition: opacity var(--duration-base) var(--ease-standard);
 }
 
 #logo-corner.is-hidden {

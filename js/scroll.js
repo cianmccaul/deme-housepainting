@@ -10,7 +10,7 @@ const panelsTrack = document.getElementById('panels');
 const menuToggle = document.getElementById('menu-toggle');
 const menuDrawer = document.getElementById('menu-drawer');
 const ctaBtn = document.getElementById('cta-btn');
-const logoCorner = document.getElementById('logo-corner');
+const menuCorner = document.getElementById('menu-corner');
 
 // ---- State ----
 const panelOrder = ['about', 'gallery', 'contact'];
@@ -33,7 +33,8 @@ function updateStage() {
   transitioning = true;
 
   siteNav.classList.add('nav--fading');
-  logoCorner.classList.toggle('is-hidden', currentView === 'content');
+  menuCorner.classList.toggle('is-hidden', currentView === 'content');
+  closeMenu();
 
   setTimeout(function () {
     stageTrack.classList.toggle('show-content', currentView === 'content');
