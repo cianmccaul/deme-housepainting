@@ -11,6 +11,7 @@ const menuToggle = document.getElementById('menu-toggle');
 const menuDrawer = document.getElementById('menu-drawer');
 const ctaBtn = document.getElementById('cta-btn');
 const menuCorner = document.getElementById('menu-corner');
+const logoCorner = document.getElementById('logo-corner');
 
 // ---- State ----
 const panelOrder = ['about', 'gallery', 'contact'];
@@ -33,6 +34,7 @@ function updateStage() {
   transitioning = true;
 
   siteNav.classList.add('nav--fading');
+  logoCorner.classList.toggle('is-hidden', currentView === 'content');
   menuCorner.classList.toggle('is-hidden', currentView === 'content');
   closeMenu();
 
