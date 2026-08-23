@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 5 1200 500" width="4000" height="1667" role="img" aria-label="Deme Housepainting">
+  <title>Deme Housepainting</title>
+  <defs>
+    <linearGradient id="swoosh" x1="0.05" y1="0" x2="0.95" y2="1">
+      <stop offset="0" stop-color="#D3A470"></stop>
+      <stop offset="0.32" stop-color="#A96E38"></stop>
+      <stop offset="0.7" stop-color="#824920"></stop>
+      <stop offset="1" stop-color="#C08A52"></stop>
+    </linearGradient>
+    <linearGradient id="flick" x1="0" y1="0" x2="1" y2="0.65">
+      <stop offset="0" stop-color="#8A5326"></stop>
+      <stop offset="0.42" stop-color="#C89860"></stop>
+      <stop offset="1" stop-color="#7A4820"></stop>
+    </linearGradient>
+    <linearGradient id="ring" x1="0.08" y1="0" x2="0.85" y2="1">
+      <stop offset="0" stop-color="#E9CBA4"></stop>
+      <stop offset="0.2" stop-color="#A96E38"></stop>
+      <stop offset="0.5" stop-color="#6B3D1B"></stop>
+      <stop offset="0.78" stop-color="#8F5C2C"></stop>
+      <stop offset="1" stop-color="#C29059"></stop>
+    </linearGradient>
+    <linearGradient id="face" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7A4A24"></stop>
+      <stop offset="0.14" stop-color="#A97742"></stop>
+      <stop offset="0.26" stop-color="#E6CCA8"></stop>
+      <stop offset="0.33" stop-color="#F5E4CC"></stop>
+      <stop offset="0.42" stop-color="#C89C69"></stop>
+      <stop offset="0.62" stop-color="#A06E3E"></stop>
+      <stop offset="0.86" stop-color="#7E5027"></stop>
+      <stop offset="1" stop-color="#9A6A3C"></stop>
+    </linearGradient>
+    <linearGradient id="wellShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#170B03" stop-opacity="0.55"></stop>
+      <stop offset="1" stop-color="#170B03" stop-opacity="0"></stop>
+    </linearGradient>
+    <linearGradient id="faceShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2A1608" stop-opacity="0.34"></stop>
+      <stop offset="0.4" stop-color="#2A1608" stop-opacity="0"></stop>
+      <stop offset="0.72" stop-color="#2A1608" stop-opacity="0"></stop>
+      <stop offset="1" stop-color="#2A1608" stop-opacity="0.3"></stop>
+    </linearGradient>
+  </defs>
+
+  <g id="mark">
+    <path d="M168 20 C 282 6 412 52 452 126 C 466 150 452 172 430 182 C 444 162 448 140 436 120 C 396 54 272 28 172 33 Z" fill="url(#swoosh)"></path>
+
+    <g>
+      <ellipse cx="257" cy="115" rx="152" ry="60" fill="url(#ring)"></ellipse>
+      <ellipse cx="257" cy="115" rx="152" ry="60" fill="none" stroke="#4A2A11" stroke-width="1.5" stroke-opacity="0.5"></ellipse>
+      <ellipse cx="257" cy="116" rx="138" ry="48" fill="#3A2110"></ellipse>
+      <ellipse cx="257" cy="121" rx="133" ry="44" fill="url(#face)"></ellipse>
+      <ellipse cx="257" cy="121" rx="133" ry="44" fill="url(#faceShade)"></ellipse>
+      <path d="M124 121 A 133 44 0 0 1 390 121 L 390 103 A 133 44 0 0 0 124 103 Z" fill="url(#wellShade)"></path>
+      <ellipse cx="257" cy="121" rx="133" ry="44" fill="none" stroke="#4A2A11" stroke-width="1.6" stroke-opacity="0.7"></ellipse>
+    </g>
+
+    <path d="M50 458 C 40 342 38 224 44 126 C 74 150 104 176 142 191 C 162 199 180 204 192 214 C 170 211 140 209 118 216 C 92 225 76 248 68 282 C 60 334 56 400 50 458 Z" fill="url(#flick)"></path>
+  </g>
+
+  <g id="wordmark" fill="#152A56" font-family="'Times New Roman', Tinos, Georgia, serif" font-weight="700">
+    <text x="163" y="385" font-size="186" letter-spacing="7">DEME</text>
+    <text x="163" y="478" font-size="98" letter-spacing="18">HOUSEPAINTING</text>
+  </g>
+</svg>

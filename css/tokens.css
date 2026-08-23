@@ -1,0 +1,67 @@
+:root {
+    --color-white: #FAFAF8;
+    --color-white-plaster: #F0EBDF;
+
+    --color-navy: #16233F;
+    --color-navy-deep: #0E1830;
+    --color-navy-tint: #2A3B63;
+
+    --color-copper: #B8763E;
+    --color-copper-light: #D9A468;
+    --color-copper-deep: #8F5A2C;
+
+    --color-text-on-white: var(--color-navy);
+    --color-text-on-navy: var(--color-white);
+    --color-text-muted: #6B7280;
+
+    --font-display: 'Inter', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    --font-body: 'Inter', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+
+    --weight-light: 300;
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+    --weight-black: 800;
+
+    --tracking-tight: -0.02em;
+    --tracking-normal: 0;
+    --tracking-wide: 0.08em;
+    --tracking-wider: 0.16em;
+
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.25rem;
+    --text-xl: 1.75rem;
+    --text-2xl: 2.5rem;
+    --text-3xl: 3.5rem;
+    --text-4xl: 5rem;
+
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2rem;
+    --space-5: 3rem;
+    --space-6: 4rem;
+    --space-7: 6rem;
+    --space-8: 8rem;
+
+    --bevel-size: 6px;
+    --bevel-light: rgba(255, 255, 255, 0.35);
+    --bevel-dark: rgba(14, 24, 48, 0.35);
+
+    --tab-gap: 6px;
+    --tab-radius-bottom: 10px;
+
+    --ease-standard: cubic-bezier(0.65, 0, 0.35, 1);
+    --duration-fast: 150ms;
+    --duration-base: 300ms;
+    --duration-slow: 750ms;
+
+    --nav-height: 88px;
+    --nav-height-docked: 64px;
+    --content-max-width: 1280px;
+
+}
+

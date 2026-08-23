@@ -1,0 +1,4 @@
+#content-wrap {
+    min-height: 100vh;
+    background: var(--color-white);
+}

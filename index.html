@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEME Housepainting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/corner.css">
+    <link rel="stylesheet" href="css/landing.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/panels.css">
+    <link rel="stylesheet" href="css/stage.css">
+</head>
+
+<body>
+
+    <!-- Logo — top of page, scrolls away with content -->
+    <div id="logo-corner">
+        <img src="assets/deme-logo.svg" alt="DEME Housepainting" class="logo-corner__img">
+    </div>
+
+    <!-- Hamburger — top of page, scrolls away with content -->
+    <div id="menu-corner">
+        <button id="menu-toggle" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+
+    <!-- Paint-tab nav — bottom-center on landing, docks to top in content state -->
+    <nav id="site-nav">
+        <ul class="nav__tabs">
+            <li class="nav__home"><a href="#" data-nav-target="home">Home</a></li>
+            <li><a href="#about" data-nav-target="about">About Us</a></li>
+            <li><a href="#gallery" data-nav-target="gallery">Gallery</a></li>
+            <li><a href="#contact" data-nav-target="contact">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Pull-out menu (hamburger target) -->
+    <div id="menu-drawer">
+        <a href="#" data-nav-target="home">Home</a>
+        <a href="#about" data-nav-target="about">About Us</a>
+        <a href="#gallery" data-nav-target="gallery">Gallery</a>
+        <a href="#contact" data-nav-target="contact">Contact Us</a>
+    </div>
+
+    <!-- Stage: fixed viewport window. vertical-track slides up/down to
+         reveal content; panels slides left/right to switch sections. -->
+    <main id="scroll-container">
+        <div id="stage">
+            <div id="vertical-track">
+                <section id="home" class="section roller-texture" data-section="home">
+                    <div class="hero">
+                        <h1 class="hero__title"><span>DEME</span>Housepainting</h1>
+                        <p class="hero__sub">Interior and exterior house painting, done with care.</p>
+                        <button class="hero__cta" id="cta-btn">Get a Free Quote</button>
+                    </div>
+                </section>
+
+                <div id="content-wrap">
+                    <div id="panels">
+                        <section id="about" class="panel roller-texture" data-panel="about">
+                            <div class="about__inner">
+                                <div class="about__text">
+                                    <span class="about__eyebrow">Who We Are</span>
+                                    <h2 class="about__title">A family business, done properly.</h2>
+                                    <p class="about__body">
+                                        DEME Housepainting is run by [Dad's name] and his son Ben - two generations
+                                        bringing the same care to every job, from a single room to a full exterior repaint.
+                                        We treat every house like it's our own.
+                                    </p>
+                                </div>
+                                <div class="about__photo">
+                                    <img src="assets/painting.jpg" alt="Ben and his father, the founders of DEME Housepainting">
+                                </div>
+                            </div>
+                        </section>
+                        <section id="gallery" class="panel" data-panel="gallery"></section>
+                        <section id="contact" class="panel" data-panel="contact"></section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/scroll.js"></script>
+    <script src="js/gallery.js"></script>
+</body>
+</html>
