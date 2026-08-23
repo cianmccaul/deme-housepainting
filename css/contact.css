@@ -1,0 +1,103 @@
+#contact {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: var(--color-white-plaster);
+  padding: 140px var(--space-6) var(--space-6);
+}
+
+.contact__inner {
+  max-width: 600px;
+  width: 100%;
+}
+
+.contact__eyebrow {
+  display: block;
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-copper);
+  margin-bottom: var(--space-2);
+}
+
+.contact__title {
+  font-family: var(--font-display);
+  font-weight: var(--weight-light);
+  font-size: var(--text-2xl);
+  color: var(--color-navy);
+  margin-bottom: var(--space-3);
+}
+
+.contact__field {
+  margin-bottom: var(--space-3);
+}
+
+.contact__field label {
+  display: block;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-navy);
+  opacity: 0.6;
+  margin-bottom: var(--space-1);
+  transition: opacity var(--duration-fast) var(--ease-standard),
+              font-size var(--duration-fast) var(--ease-standard),
+              color var(--duration-fast) var(--ease-standard);
+}
+
+.contact__field:focus-within label {
+  opacity: 1;
+  font-size: calc(var(--text-xs) * 1.08);
+  color: var(--color-copper);
+}
+
+.contact__field input,
+.contact__field textarea {
+  width: 100%;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--color-navy-tint);
+  padding: var(--space-2) 0;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-navy);
+  resize: none;
+  transition: border-color var(--duration-fast) var(--ease-standard),
+              border-bottom-width var(--duration-fast) var(--ease-standard),
+              padding var(--duration-fast) var(--ease-standard);
+}
+
+.contact__field input:focus,
+.contact__field textarea:focus {
+  outline: none;
+  color: var(--color-copper);
+  border-bottom-color: var(--color-copper);
+  border-bottom-width: 3px;
+  padding-bottom: calc(var(--space-2) - 2px);
+}
+
+.contact__submit {
+  border: 1px solid var(--color-navy);
+  background: none;
+  color: var(--color-navy);
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-standard),
+              color var(--duration-fast) var(--ease-standard),
+              border-color var(--duration-fast) var(--ease-standard);
+}
+
+.contact__submit:hover {
+  background: var(--color-copper);
+  border-color: var(--color-copper);
+  color: var(--color-white-plaster);
+}
+
+.contact__field textarea {
+  overflow: hidden;
+}

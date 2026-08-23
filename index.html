@@ -61,7 +61,7 @@
                     <div class="hero">
                         <h1 class="hero__title"><span>DEME</span>Housepainting</h1>
                         <p class="hero__sub">Interior and exterior house painting, done with care.</p>
-                        <button class="hero__cta" id="cta-btn">Get a Free Quote</button>
+                        <button class="hero__cta" id="cta-btn" data-nav-target="contact">Get a Free Quote</button>
                     </div>
                 </section>
 
@@ -115,7 +115,31 @@
                                 </div>
                             </div>
                         </section>
-                        <section id="contact" class="panel" data-panel="contact"></section>
+                        <section id="contact" class="panel roller-texture" data-panel="contact">
+                            <div class="contact__inner">
+                                <span class="contact__eyebrow">Contact — DEME Housepainting</span>
+                                <h2 class="contact__title">Tell us about your project.</h2>
+
+                                <form class="contact__form" id="contact-form">
+                                <div class="contact__field">
+                                    <label for="name">Full Name</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+
+                                <div class="contact__field">
+                                    <label for="contact-info">Email / Phone</label>
+                                    <input type="text" id="contact-info" name="contact-info" required>
+                                </div>
+
+                                <div class="contact__field">
+                                    <label for="details">Project Details</label>
+                                    <textarea id="details" name="details" rows="1"></textarea>
+                                </div>
+
+                                <button type="submit" class="contact__submit">Submit</button>
+                                </form>
+                            </div>
+                        </section>
                     </div>
                 </div>
             </div>

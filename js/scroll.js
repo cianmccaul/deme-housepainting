@@ -175,3 +175,17 @@ document.querySelectorAll('[data-nav-target]').forEach(function (link) {
 ctaBtn.addEventListener('click', function () {
   this.classList.toggle('is-selected');
 });
+
+const contactForm = document.getElementById('contact-form');
+contactForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+  // No backend wired up yet — replace this with a real submission
+  // handler (fetch to a form service, mailto, etc.) once you have one.
+  alert('Thanks! (Form submission isn\'t connected to anything yet.)');
+});
+
+const detailsField = document.getElementById('details');
+detailsField.addEventListener('input', function () {
+  this.style.height = 'auto';
+  this.style.height = this.scrollHeight + 'px';
+});
