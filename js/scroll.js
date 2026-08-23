@@ -1,6 +1,6 @@
 /* ===================================================================
    SCROLL / STATE — landing ↔ content transitions, nav docking,
-   panel switching, hamburger menu.
+   panel switching, hamburger menu, contact form.
    =================================================================== */
 
 // ---- Elements ----
@@ -185,16 +185,50 @@ ctaBtn.addEventListener('click', function () {
   this.classList.toggle('is-selected');
 });
 
-const contactForm = document.getElementById('contact-form');
-contactForm.addEventListener('submit', function (e) {
-  e.preventDefault();
-  // No backend wired up yet — replace this with a real submission
-  // handler (fetch to a form service, mailto, etc.) once you have one.
-  alert('Thanks! (Form submission isn\'t connected to anything yet.)');
-});
-
+// ---- Contact form: auto-growing textarea ----
 const detailsField = document.getElementById('details');
 detailsField.addEventListener('input', function () {
   this.style.height = 'auto';
   this.style.height = this.scrollHeight + 'px';
+});
+
+// ---- Contact form submission ----
+const contactForm = document.getElementById('contact-form');
+const submitBtn = document.querySelector('.contact__submit');
+
+contactForm.addEventListener('submit', async function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById('name').value.trim();
+  const contact = document.getElementById('contact-info').value.trim();
+  const details = document.getElementById('details').value.trim();
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending…';
+
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, contact, details }),
+    });
+
+    if (!response.ok) {
+      throw new Error('Request failed');
+    }
+
+    submitBtn.textContent = 'Sent — thank you!';
+    contactForm.reset();
+    detailsField.style.height = 'auto';
+
+    setTimeout(function () {
+      submitBtn.textContent = 'Submit';
+      submitBtn.disabled = false;
+    }, 4000);
+
+  } catch (err) {
+    submitBtn.textContent = 'Something went wrong — try again';
+    submitBtn.disabled = false;
+    console.error('Contact form error:', err);
+  }
 });
