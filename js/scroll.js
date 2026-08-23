@@ -108,6 +108,38 @@ document.addEventListener('keydown', function (e) {
   }
 }, { passive: false });
 
+// ---- Touch gestures (phones have no wheel event) ----
+let touchStartY = null;
+
+document.addEventListener('touchstart', function (e) {
+  touchStartY = e.touches[0].clientY;
+}, { passive: true });
+
+document.addEventListener('touchmove', function (e) {
+  if (currentView === 'landing') {
+    e.preventDefault();
+  }
+}, { passive: false });
+
+document.addEventListener('touchend', function (e) {
+  if (touchStartY === null || transitioning) return;
+
+  const touchEndY = e.changedTouches[0].clientY;
+  const diff = touchStartY - touchEndY;
+  touchStartY = null;
+
+  const SWIPE_THRESHOLD = 60;
+
+  if (currentView === 'landing' && diff > SWIPE_THRESHOLD) {
+    goToPanel(panelOrder[currentPanel]);
+  } else if (currentView === 'content' && diff < -SWIPE_THRESHOLD) {
+    const activePanel = document.querySelectorAll('.panel')[currentPanel];
+    if (activePanel.scrollTop <= 0) {
+      goToLanding();
+    }
+  }
+}, { passive: true });
+
 // ---- Hamburger menu ----
 function closeMenu() {
   menuToggle.classList.remove('is-open');

@@ -1,0 +1,47 @@
+@media (max-width: 768px) {
+
+  /* ---- Landing hero ---- */
+  #home {
+    padding-inline: var(--space-4);
+  }
+  .hero__title {
+    font-size: var(--text-2xl);
+  }
+  .hero__sub {
+    font-size: var(--text-sm);
+  }
+
+  /* ---- Corner (logo/hamburger) ---- */
+  .logo-corner__img {
+    height: 40px;
+  }
+
+  /* ---- Paint-tab nav — fixed 190px width won't fit 3-across on a phone ---- */
+  .nav__tabs a {
+    width: auto;
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-xs);
+  }
+  .nav__tabs {
+    gap: 4px;
+  }
+
+  /* ---- About Us — stack instead of side-by-side ---- */
+  .about__inner {
+    flex-direction: column;
+    gap: var(--space-4);
+    text-align: center;
+  }
+  .about__body {
+    max-width: none;
+    margin-inline: auto;
+  }
+
+  /* ---- Gallery — one column instead of three ---- */
+  .gallery__grid {
+    grid-template-columns: 1fr;
+  }
+  .gallery__title {
+    font-size: var(--text-xl);
+  }
+}
