@@ -69,4 +69,8 @@
     padding-top: 180px;
     padding-bottom: var(--space-5);
   }
+  .about__eyebrow,
+  .gallery__eyebrow {
+    margin-top: 160px !important;
+  }
 }

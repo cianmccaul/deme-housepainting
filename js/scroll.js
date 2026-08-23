@@ -65,7 +65,6 @@ function goToLanding() {
   updateStage();
 }
 
-
 // ---- Wheel scroll ----
 window.addEventListener('wheel', function (e) {
   e.preventDefault();
