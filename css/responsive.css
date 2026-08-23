@@ -64,7 +64,9 @@
     padding-bottom: var(--space-5);
   }
   #about,
-  #gallery {
-    align-items: flex-start;
+  #gallery,
+  #contact {
+    padding-top: 180px;
+    padding-bottom: var(--space-5);
   }
 }
