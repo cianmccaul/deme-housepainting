@@ -60,6 +60,7 @@
     display: none;
   }
   .panel {
-    padding-top: 140px;
+    padding-top: 180px;
+    padding-bottom: var(--space-5);
   }
 }
