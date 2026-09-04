@@ -1,16 +1,11 @@
 #stage {
   height: 100dvh;
-  overflow: hidden;
+  overflow-y: auto;
   position: relative;
 }
 
 #vertical-track {
   height: 200dvh;
-  transition: transform var(--duration-slow) var(--ease-standard);
-}
-
-#vertical-track.show-content {
-  transform: translateY(-100dvh);
 }
 
 #content-wrap {
