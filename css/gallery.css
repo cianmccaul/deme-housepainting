@@ -1,25 +1,27 @@
+
+Gallery · CSS
 #gallery {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: var(--space-6);
 }
-
+ 
 .gallery__inner {
   max-width: var(--content-max-width);
   width: 100%;
   text-align: center;
 }
-
+ 
 .gallery__eyebrow {
   display: block;
   font-size: var(--text-sm);
   letter-spacing: var(--tracking-wider);
   text-transform: uppercase;
-  color: var(--color-copper);
+  color: var(--color-navy);
   margin-bottom: var(--space-2);
 }
-
+ 
 .gallery__title {
   font-family: var(--font-display);
   font-weight: var(--weight-light);
@@ -27,13 +29,13 @@
   color: var(--color-navy);
   margin-bottom: var(--space-5);
 }
-
+ 
 .gallery__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-3);
 }
-
+ 
 .gallery__item {
   position: relative;
   aspect-ratio: 4 / 3;
@@ -41,7 +43,7 @@
   border-radius: 4px;
   cursor: ew-resize;
 }
-
+ 
 .gallery__before,
 .gallery__after {
   position: absolute;
@@ -52,11 +54,11 @@
   pointer-events: none;
   user-select: none;
 }
-
+ 
 .gallery__after {
   clip-path: inset(0 0 0 50%);
 }
-
+ 
 .gallery__handle {
   position: absolute;
   top: 0;
@@ -68,7 +70,7 @@
   pointer-events: none;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
 }
-
+ 
 .gallery__handle-icon {
   position: absolute;
   top: 50%;
