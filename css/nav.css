@@ -39,4 +39,5 @@
 .nav__tabs a.is-active {
     background: var(--color-white-plaster);
     color: var(--color-navy);
+    border: 1.5px solid var(--color-navy);
 }
