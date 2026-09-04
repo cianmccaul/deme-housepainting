@@ -1,12 +1,10 @@
-
-About · CSS
 #about {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: var(--space-6);
 }
- 
+
 .about__inner {
   display: flex;
   align-items: center;
@@ -14,20 +12,20 @@ About · CSS
   max-width: var(--content-max-width);
   width: 100%;
 }
- 
+
 .about__text {
   flex: 1;
 }
- 
+
 .about__eyebrow {
   display: block;
   font-size: var(--text-sm);
   letter-spacing: var(--tracking-wider);
   text-transform: uppercase;
-  color: var(--color-navy);
+  color: var(--color-copper);
   margin-bottom: var(--space-2);
 }
- 
+
 .about__title {
   font-family: var(--font-display);
   font-weight: var(--weight-light);
@@ -36,18 +34,18 @@ About · CSS
   line-height: 1.15;
   margin-bottom: var(--space-3);
 }
- 
+
 .about__body {
   font-size: var(--text-base);
   color: var(--color-text-muted);
   line-height: 1.7;
   max-width: 480px;
 }
- 
+
 .about__photo {
   flex: 1;
 }
- 
+
 .about__photo img {
   width: 100%;
   height: auto;
