@@ -6,7 +6,11 @@
 }
 
 #vertical-track {
-  min-height: 200dvh;
+  /* No explicit height here anymore - it simply sizes to fit #home
+     plus #content-wrap's real content. Forcing a minimum height was
+     leaving blank space (showing the page's plain white background)
+     below the footer whenever real content was shorter than that
+     minimum. */
 }
 
 #content-wrap {
