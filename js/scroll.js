@@ -41,6 +41,10 @@ ctaBtn.addEventListener('click', function () {
   this.classList.toggle('is-selected');
 });
 
+// ---- Footer copyright year (auto-updates, never goes stale) ----
+const footerYear = document.getElementById('footer-year');
+if (footerYear) footerYear.textContent = new Date().getFullYear();
+
 const detailsField = document.getElementById('details');
 detailsField.addEventListener('input', function () {
   this.style.height = 'auto';

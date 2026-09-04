@@ -6,3 +6,72 @@
 .panel {
     padding-top: 110px;
 }
+
+/* ---- Footer: navy fill, magnolia text - same treatment as the
+     buttons and nav. Sits persistently below the panels, visible
+     regardless of which panel (About/Gallery/Contact) is active. ---- */
+#site-footer {
+  flex-shrink: 0;
+  background: var(--color-navy);
+  padding: var(--space-4) var(--space-6);
+}
+
+.footer__inner {
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer__name {
+  font-family: var(--font-display);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  font-size: var(--text-sm);
+  color: var(--color-white-plaster);
+}
+
+.footer__tagline {
+  font-size: var(--text-xs);
+  color: var(--color-white-plaster);
+  opacity: 0.65;
+}
+
+.footer__details {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.footer__details a {
+  font-size: var(--text-sm);
+  color: var(--color-white-plaster);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--duration-fast) var(--ease-standard),
+              color var(--duration-fast) var(--ease-standard);
+}
+
+.footer__details a:hover,
+.footer__details a:focus-visible {
+  color: var(--color-copper-light);
+  border-color: var(--color-copper-light);
+}
+
+.footer__copyright {
+  font-size: var(--text-xs);
+  color: var(--color-white-plaster);
+  opacity: 0.55;
+  width: 100%;
+  text-align: center;
+  padding-top: var(--space-2);
+  border-top: 1px solid rgba(240, 235, 223, 0.15);
+}

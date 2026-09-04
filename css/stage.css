@@ -11,12 +11,15 @@
 #content-wrap {
   height: 100dvh;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 #panels {
   display: flex;
   width: 300vw;
-  height: 100%;
+  flex: 1;
+  min-height: 0;
   transition: transform var(--duration-slow) var(--ease-standard);
 }
 
