@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   padding-inline: var(--space-6);
+  padding-bottom: var(--space-7);
 }
 
 .hero {
@@ -32,12 +33,12 @@
 
 .hero__cta {
   border: 2px solid var(--color-navy);
-  background: var(--color-white-plaster);
+  background: var(--color-navy);
   padding: var(--space-2) var(--space-4);
   font-family: var(--font-display);
   font-size: var(--text-base);
   font-weight: var(--weight-medium);
-  color: var(--color-navy);
+  color: var(--color-white-plaster);
   cursor: pointer;
   border-radius: 2px;
   box-shadow:
@@ -50,7 +51,7 @@
 
 .hero__cta:hover,
 .hero__cta.is-selected {
-  background: var(--color-navy);
-  border-color: var(--color-white);
-  color: var(--color-text-on-navy);
+  background: var(--color-white-plaster);
+  border-color: var(--color-navy);
+  color: var(--color-navy);
 }

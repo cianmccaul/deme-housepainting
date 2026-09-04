@@ -15,6 +15,7 @@ const menuDrawer = document.getElementById('menu-drawer');
 const ctaBtn = document.getElementById('cta-btn');
 const menuCorner = document.getElementById('menu-corner');
 const logoCorner = document.getElementById('logo-corner');
+const toTopBtn = document.getElementById('to-top');
 const demeWord = document.querySelector('.hero__title span');
 
 const panelOrder = ['about', 'gallery', 'contact'];
@@ -111,6 +112,8 @@ function goToLanding() {
   stage.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+toTopBtn.addEventListener('click', goToLanding);
+
 document.querySelectorAll('[data-nav-target]').forEach(function (link) {
   link.addEventListener('click', function (e) {
     e.preventDefault();
@@ -174,6 +177,7 @@ function render() {
     setActiveNav(inContent);
     logoCorner.classList.toggle('is-hidden', inContent);
     menuCorner.classList.toggle('is-hidden', inContent);
+    toTopBtn.classList.toggle('visible', inContent);
 
     if (!autoSnapping) {
       const crossedDown = lastScrollTop < triggerY && st >= triggerY;
