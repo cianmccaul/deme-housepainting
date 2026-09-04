@@ -4,17 +4,6 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
-  transition: opacity var(--duration-base) var(--ease-standard);
-}
-
-#site-nav.nav--docked {
-  top: var(--space-2);
-  bottom: auto;
-  transform: translateX(-50%);
-}
-
-#site-nav.nav--fading {
-  opacity: 0;
 }
 
 .nav__tabs {

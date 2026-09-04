@@ -29,28 +29,51 @@ function setActiveNav() {
   });
 }
 
+// ---- Nav slide animation - the new piece. Nav is handed over to a
+// stable top:0 anchor so its position can be driven purely by an
+// animated transform, sliding continuously between its bottom-dock
+// and top-dock spots (matching the "moves as one unit" motion) rather
+// than the old fade-out/instant-jump/fade-in swap. Nothing about the
+// wheel/touch/keyboard trigger system below this changes at all. ----
+siteNav.style.top = '0px';
+siteNav.style.bottom = 'auto';
+
+function navBottomRestY() { return window.innerHeight - 48 - siteNav.offsetHeight; }
+function navTopRestY() { return 16; }
+
+siteNav.style.transform = 'translate(-50%, ' + navBottomRestY() + 'px)';
+
+function animateNavTo(targetY, duration) {
+  const match = /translate\(-50%,\s*(-?\d+(?:\.\d+)?)px\)/.exec(siteNav.style.transform);
+  const fromY = match ? parseFloat(match[1]) : navBottomRestY();
+  const startTime = performance.now();
+
+  function step(now) {
+    const t = Math.min((now - startTime) / duration, 1);
+    const eased = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    siteNav.style.transform = 'translate(-50%, ' + (fromY + (targetY - fromY) * eased) + 'px)';
+    if (t < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
 // ---- Stage / panel transitions ----
 function updateStage() {
   transitioning = true;
 
-  siteNav.classList.add('nav--fading');
   logoCorner.classList.toggle('is-hidden', currentView === 'content');
   menuCorner.classList.toggle('is-hidden', currentView === 'content');
   closeMenu();
 
-  setTimeout(function () {
-    stageTrack.classList.toggle('show-content', currentView === 'content');
-    panelsTrack.style.transform = 'translateX(-' + (currentPanel * 100) + 'vw)';
-    siteNav.classList.toggle('nav--docked', currentView === 'content');
-    setActiveNav();
+  stageTrack.classList.toggle('show-content', currentView === 'content');
+  panelsTrack.style.transform = 'translateX(-' + (currentPanel * 100) + 'vw)';
+  siteNav.classList.toggle('nav--docked', currentView === 'content');
+  setActiveNav();
+  animateNavTo(currentView === 'content' ? navTopRestY() : navBottomRestY(), 750);
 
-    setTimeout(function () {
-      siteNav.classList.remove('nav--fading');
-    }, 50);
-  }, 200);
-
-  setTimeout(function () { transitioning = false; }, 750 + 250);
+  setTimeout(function () { transitioning = false; }, 750);
 }
+
 
 function goToPanel(panelName) {
   const idx = panelOrder.indexOf(panelName);
