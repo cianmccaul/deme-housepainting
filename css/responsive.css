@@ -56,17 +56,16 @@
     display: none;
   }
   .panel {
-    padding-top: 180px;
     padding-bottom: var(--space-5);
   }
   #about,
   #gallery,
   #contact {
-    padding-top: 180px;
     padding-bottom: var(--space-5);
   }
   .about__eyebrow,
-  .gallery__eyebrow {
-    margin-top: 160px !important;
+  .gallery__eyebrow,
+  .contact__eyebrow {
+    margin-top: 200px !important;
   }
 }
