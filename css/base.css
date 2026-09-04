@@ -56,9 +56,9 @@ button {
 .roller-texture {
   background-color: var(--color-white-plaster);
   background-image: url("../assets/painted-wall.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+  background-position: top center;
 }
 
 .bevelled {
