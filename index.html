@@ -1,3 +1,6 @@
+
+
+Index · HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,21 +27,21 @@
     <link rel="stylesheet" href="css/stage.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
-
+ 
 <body>
-
+ 
     <!-- Logo — top of page, scrolls away with content -->
     <div id="logo-corner">
         <img src="assets/deme-logo.svg" alt="DEME Housepainting" class="logo-corner__img">
     </div>
-
+ 
     <!-- Hamburger — top of page, scrolls away with content -->
     <div id="menu-corner">
         <button id="menu-toggle" aria-label="Open menu" aria-expanded="false">
             <span></span><span></span><span></span>
         </button>
     </div>
-
+ 
     <!-- Paint-tab nav — bottom-center on landing, docks to top in content state -->
     <nav id="site-nav">
         <ul class="nav__tabs">
@@ -48,7 +51,7 @@
             <li><a href="#contact" data-nav-target="contact">Contact Us</a></li>
         </ul>
     </nav>
-
+ 
     <!-- Pull-out menu (hamburger target) -->
     <div id="menu-drawer">
         <a href="#" data-nav-target="home">Home</a>
@@ -56,7 +59,7 @@
         <a href="#gallery" data-nav-target="gallery">Gallery</a>
         <a href="#contact" data-nav-target="contact">Contact Us</a>
     </div>
-
+ 
     <!-- Stage: fixed viewport window. vertical-track slides up/down to
          reveal content; panels slides left/right to switch sections. -->
     <main id="scroll-container">
@@ -69,7 +72,7 @@
                         <button class="hero__cta" id="cta-btn" data-nav-target="contact">Get a Free Quote</button>
                     </div>
                 </section>
-
+ 
                 <div id="content-wrap">
                     <div id="panels">
                         <section id="about" class="panel roller-texture" data-panel="about">
@@ -92,7 +95,7 @@
                             <div class="gallery__inner">
                                 <span class="gallery__eyebrow">Our Work</span>
                                 <h2 class="gallery__title">Before &amp; after.</h2>
-
+ 
                                 <div class="gallery__grid">
                                     <div class="gallery__item" data-slider>
                                         <img class="gallery__before" src="assets/before_1.jpg" alt="Staircase Before painting">
@@ -101,7 +104,7 @@
                                             <img class="gallery__handle-icon" src="assets/paintbrush-handle.png" alt="">
                                         </div>
                                     </div>
-
+ 
                                     <div class="gallery__item" data-slider>
                                         <img class="gallery__before" src="assets/before_2.jpg" alt="Front of House Before painting">
                                         <img class="gallery__after" src="assets/after_2.jpg" alt="Front of House After painting">
@@ -109,7 +112,7 @@
                                             <img class="gallery__handle-icon" src="assets/paintbrush-handle.png" alt="">
                                         </div>
                                     </div>
-
+ 
                                     <div class="gallery__item" data-slider>
                                         <img class="gallery__before" src="assets/before_3.jpg" alt="House Before painting">
                                         <img class="gallery__after" src="assets/after_3.jpg" alt="House After painting">
@@ -122,25 +125,25 @@
                         </section>
                         <section id="contact" class="panel roller-texture" data-panel="contact">
                             <div class="contact__inner">
-                                <span class="contact__eyebrow">Contact — DEME Housepainting</span>
+                                <span class="contact__eyebrow">Contact - DEME Housepainting</span>
                                 <h2 class="contact__title">Tell us about your project.</h2>
-
+ 
                                 <form class="contact__form" id="contact-form">
                                 <div class="contact__field">
                                     <label for="name">Full Name</label>
                                     <input type="text" id="name" name="name" required>
                                 </div>
-
+ 
                                 <div class="contact__field">
                                     <label for="contact-info">Email / Phone</label>
                                     <input type="text" id="contact-info" name="contact-info" required>
                                 </div>
-
+ 
                                 <div class="contact__field">
                                     <label for="details">Project Details</label>
                                     <textarea id="details" name="details" rows="1"></textarea>
                                 </div>
-
+ 
                                 <button type="submit" class="contact__submit">Submit</button>
                                 </form>
                             </div>
@@ -150,7 +153,7 @@
             </div>
         </div>
     </main>
-
+ 
     <script src="js/scroll.js"></script>
     <script src="js/gallery.js"></script>
 </body>
