@@ -137,6 +137,22 @@ document.querySelectorAll('[data-nav-target]').forEach(function (link) {
 
 let lastScrollTop = 0;
 let autoSnapping = false;
+let touchActive = false;
+let pendingSnapDirection = null; // 'down' | 'up' | null - set if a crossing happens mid-touch
+
+stage.addEventListener('touchstart', function () { touchActive = true; }, { passive: true });
+stage.addEventListener('touchend', function () {
+  touchActive = false;
+  // If a crossing was detected while the finger was still down, fire
+  // the snap now that the touch has actually ended - this is what
+  // stops the "glitch when you hold your finger through the trigger
+  // point": we never fight the browser's own touch-scroll for control
+  // while a touch is still active.
+  if (pendingSnapDirection && !autoSnapping) {
+    performSnap(pendingSnapDirection);
+    pendingSnapDirection = null;
+  }
+}, { passive: true });
 
 function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
 function lerp(a, b, t) { return a + (b - a) * t; }
@@ -166,6 +182,22 @@ function setNavPosition(y) {
   siteNav.style.transform = 'translate(-50%, ' + y + 'px)';
 }
 
+// Uses scrollIntoView on the real target element rather than a
+// precomputed pixel offset. This matters specifically on mobile Safari:
+// its address bar can show/hide DURING a scroll gesture, changing the
+// real viewport height mid-motion. A pixel target computed a moment
+// earlier can go stale by the time the scroll finishes, landing short
+// and leaving a gap. Letting the browser resolve the target position
+// at the moment it actually scrolls avoids that entirely.
+function performSnap(direction) {
+  autoSnapping = true;
+  const target = direction === 'down'
+    ? document.getElementById('content-wrap')
+    : document.getElementById('home');
+  target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  setTimeout(function () { autoSnapping = false; }, 600);
+}
+
 function render() {
   try {
     const h = stageHeight();
@@ -187,9 +219,14 @@ function render() {
       const crossedDown = lastScrollTop < triggerY && st >= triggerY;
       const crossedUp = lastScrollTop > triggerY && st <= triggerY;
       if (crossedDown || crossedUp) {
-        autoSnapping = true;
-        stage.scrollTo({ top: crossedDown ? h : 0, behavior: 'smooth' });
-        setTimeout(function () { autoSnapping = false; }, 600);
+        const direction = crossedDown ? 'down' : 'up';
+        if (touchActive) {
+          // Finger is still down - don't fight native touch-scroll.
+          // Remember it and fire once the touch actually ends.
+          pendingSnapDirection = direction;
+        } else {
+          performSnap(direction);
+        }
       }
     }
 

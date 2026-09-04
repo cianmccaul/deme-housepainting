@@ -31,10 +31,6 @@
     justify-content: center;
   }
 
-  .nav__tabs li:has(a.is-active) {
-    display: none;
-  }
-
   /* ---- About Us — stack instead of side-by-side ---- */
   .about__inner {
     flex-direction: column;
