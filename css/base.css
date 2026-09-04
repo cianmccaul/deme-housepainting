@@ -16,7 +16,11 @@ body {
     font-family: var(--font-body);
     font-weight: var(--weight-regular);
     color: var(--color-text-on-white);
-    background: var(--color-white);
+    background-color: var(--color-white-plaster);
+    background-image: url("../assets/painted-wall.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -56,9 +60,9 @@ button {
 .roller-texture {
   background-color: var(--color-white-plaster);
   background-image: url("../assets/painted-wall.png");
-  background-repeat: repeat-y;
-  background-size: 100% auto;
-  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .bevelled {
