@@ -34,7 +34,10 @@ module.exports = async function handler(req, res) {
       body: JSON.stringify({
         from: 'DEME Housepainting Website <onboarding@resend.dev>',
         to: process.env.CONTACT_EMAIL_TO,
-        reply_to: contact,
+        // The field accepts "email or phone". Resend rejects a reply_to that
+        // isn't an email address, which would lose phone-only enquiries -
+        // so only set it when the visitor actually gave an email.
+        ...(isEmail(contact) ? { reply_to: contact.trim() } : {}),
         subject: `New enquiry from ${name}`,
         html: emailHtml,
       }),
@@ -126,6 +129,10 @@ function buildEmailHtml({ name, contact, details }) {
   </table>
 </body>
 </html>`;
+}
+
+function isEmail(str) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(str).trim());
 }
 
 function escapeHtml(str) {

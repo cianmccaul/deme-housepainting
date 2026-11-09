@@ -18,7 +18,7 @@ body {
     font-weight: var(--weight-regular);
     color: var(--color-text-on-white);
     background-color: var(--color-white-plaster);
-    background-image: url("../assets/painted-wall.png");
+    background-image: url("../assets/painted-wall.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -60,7 +60,7 @@ button {
 
 .roller-texture {
   background-color: var(--color-white-plaster);
-  background-image: url("../assets/painted-wall.png");
+  background-image: url("../assets/painted-wall.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

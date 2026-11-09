@@ -70,3 +70,13 @@
     margin-top: 110px !important;
   }
 }
+
+/* ---- Tablets / small laptops: 3 x 190px tabs collide with the logo ---- */
+@media (min-width: 769px) and (max-width: 1100px) {
+  .nav__tabs a {
+    width: auto;
+    min-width: 140px;
+    padding: var(--space-2) var(--space-3);
+    font-size: 0.9rem;
+  }
+}

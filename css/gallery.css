@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-6);
+  padding: 110px var(--space-6) var(--space-6);   /* top clears the docked nav, same as the other panels */
 }
 
 .gallery__inner {
@@ -78,4 +78,221 @@
   height: auto;
   max-width: none;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
+}
+
+/* ===================================================================
+   Card wrapper, labels, caption
+   =================================================================== */
+
+.gallery__card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.gallery__card .gallery__item {
+  width: 100%;
+  touch-action: pan-y;            /* let the page scroll vertically, we handle horizontal drags */
+  box-shadow: 0 10px 30px -12px rgba(14, 24, 48, 0.35);
+}
+
+.gallery__label {
+  position: absolute;
+  top: 10px;
+  z-index: 2;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  pointer-events: none;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: opacity var(--duration-base) var(--ease-standard);
+}
+
+.gallery__label--before {
+  left: 10px;
+  background: rgba(240, 235, 223, 0.88);
+  color: var(--color-navy);
+}
+
+.gallery__label--after {
+  right: 10px;
+  background: rgba(22, 35, 63, 0.88);
+  color: var(--color-white-plaster);
+}
+
+.gallery__caption {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.gallery__item:focus-visible {
+  outline: 2px solid var(--color-copper);
+  outline-offset: 4px;
+}
+
+/* ===================================================================
+   Before / After segmented switch (phones only)
+   =================================================================== */
+
+.gallery__toggle {
+  display: none;                  /* desktop uses the paintbrush slider */
+  position: relative;
+  grid-template-columns: 1fr 1fr;
+  width: min(260px, 100%);
+  padding: 4px;
+  border-radius: 999px;
+  background: rgba(22, 35, 63, 0.10);
+  box-shadow: inset 0 1px 2px rgba(14, 24, 48, 0.12);
+}
+
+.gallery__toggle-thumb {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
+  border-radius: 999px;
+  background: var(--color-white-plaster);
+  box-shadow: 0 2px 6px rgba(14, 24, 48, 0.18), 0 0 0 1px rgba(22, 35, 63, 0.08);
+  transition: transform var(--duration-base) cubic-bezier(0.3, 0.9, 0.3, 1),
+              background var(--duration-base) var(--ease-standard);
+}
+
+.gallery__toggle button {
+  position: relative;
+  z-index: 1;
+  min-height: 44px;               /* Apple's minimum comfortable tap size */
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-navy);
+  opacity: 0.6;
+  -webkit-tap-highlight-color: transparent;
+  transition: color var(--duration-base) var(--ease-standard),
+              opacity var(--duration-base) var(--ease-standard);
+}
+
+.gallery__toggle button[aria-pressed="true"] {
+  opacity: 1;
+}
+
+/* "After" selected: thumb slides right and turns navy */
+.gallery__card.is-after .gallery__toggle-thumb {
+  transform: translateX(100%);
+  background: var(--color-navy);
+}
+
+.gallery__card.is-after .gallery__toggle button[data-show="after"] {
+  color: var(--color-white-plaster);
+}
+
+/* ===================================================================
+   Time-lapse feature (below the before/after grid)
+   =================================================================== */
+
+.gallery__feature {
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: 2px solid var(--color-copper);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery__feature-eyebrow {
+  display: block;
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-copper-deep);
+  margin-bottom: var(--space-2);
+}
+
+.gallery__feature-title {
+  font-family: var(--font-display);
+  font-weight: var(--weight-light);
+  font-size: var(--text-xl);
+  color: var(--color-navy);
+  margin: 0 0 var(--space-4);
+}
+
+.gallery__video {
+  width: min(560px, 100%);
+  aspect-ratio: 360 / 254;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--color-navy);
+  box-shadow: 0 10px 30px -12px rgba(14, 24, 48, 0.35);
+}
+
+.gallery__video video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===================================================================
+   Phones: swap the drag slider for the segmented switch
+   =================================================================== */
+
+@media (max-width: 768px) {
+  #gallery {
+    padding-inline: var(--space-3);
+  }
+
+  .gallery__grid {
+    gap: var(--space-5);
+  }
+
+  .gallery__card .gallery__item {
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+
+  .gallery__toggle {
+    display: grid;
+  }
+
+  .gallery__handle {
+    display: none;
+  }
+
+  /* Crossfade instead of clip: after image sits on top, faded out */
+  .gallery__after {
+    clip-path: none !important;
+    opacity: 0;
+    transition: opacity 400ms var(--ease-standard);
+  }
+
+  .gallery__card.is-after .gallery__after {
+    opacity: 1;
+  }
+
+  /* One badge at a time, top-left, matching the current state */
+  .gallery__label--after {
+    left: 10px;
+    right: auto;
+    opacity: 0;
+  }
+  .gallery__card.is-after .gallery__label--after { opacity: 1; }
+  .gallery__card.is-after .gallery__label--before { opacity: 0; }
+
+  .gallery__feature {
+    margin-top: var(--space-5);
+    padding-top: var(--space-4);
+  }
+
+  .gallery__feature-title {
+    font-size: var(--text-lg);
+  }
 }

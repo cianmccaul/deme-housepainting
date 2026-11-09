@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="DEME Housepainting — family-run interior and exterior house painting.">
+    <meta name="theme-color" content="#16233F">
+    <link rel="canonical" href="https://deme-housepainting.vercel.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="DEME Housepainting">
+    <meta property="og:title" content="DEME Housepainting">
+    <meta property="og:description" content="Family-run interior and exterior house painting. See our before and after work and get a free quote.">
+    <meta property="og:url" content="https://deme-housepainting.vercel.app/">
+    <meta property="og:image" content="https://deme-housepainting.vercel.app/assets/after_2.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <title>DEME Housepainting</title>
     <link rel="icon" href="/favicon-v2.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/apple-touch-icon-v2.png">
@@ -87,7 +96,7 @@
 
                 <div id="content-wrap">
                     <div id="panels">
-                        <section id="about" class="panel" data-panel="about">
+                        <section id="about" class="panel is-current" data-panel="about">
                             <div class="about__inner">
                                 <div class="about__text">
                                     <span class="about__eyebrow">Who We Are</span>
@@ -109,28 +118,71 @@
                                 <h2 class="gallery__title">Before &amp; after.</h2>
 
                                 <div class="gallery__grid">
-                                    <div class="gallery__item" data-slider>
-                                        <img class="gallery__before" src="assets/before_1.jpg" alt="Staircase Before painting">
-                                        <img class="gallery__after" src="assets/after_1.jpg" alt="Staircase After painting">
-                                        <div class="gallery__handle">
-                                            <img class="gallery__handle-icon" src="assets/paintbrush-handle.png" alt="">
+                                    <figure class="gallery__card">
+                                        <div class="gallery__item" data-slider data-state="before">
+                                            <img class="gallery__before" src="assets/before_1.jpg" alt="Staircase, before painting" loading="lazy" decoding="async">
+                                            <img class="gallery__after" src="assets/after_1.jpg" alt="Staircase, after painting" loading="lazy" decoding="async">
+                                            <span class="gallery__label gallery__label--before" aria-hidden="true">Before</span>
+                                            <span class="gallery__label gallery__label--after" aria-hidden="true">After</span>
+                                            <div class="gallery__handle">
+                                                <img class="gallery__handle-icon" src="assets/paintbrush-handle.png" alt="">
+                                            </div>
                                         </div>
-                                    </div>
+                                        <div class="gallery__toggle" role="group" aria-label="Staircase: show before or after">
+                                            <span class="gallery__toggle-thumb" aria-hidden="true"></span>
+                                            <button type="button" data-show="before" aria-pressed="true">Before</button>
+                                            <button type="button" data-show="after" aria-pressed="false">After</button>
+                                        </div>
+                                        <figcaption class="gallery__caption">Staircase</figcaption>
+                                    </figure>
 
-                                    <div class="gallery__item" data-slider>
-                                        <img class="gallery__before" src="assets/before_2.jpg" alt="Front of House Before painting">
-                                        <img class="gallery__after" src="assets/after_2.jpg" alt="Front of House After painting">
-                                        <div class="gallery__handle">
-                                            <img class="gallery__handle-icon" src="assets/paintbrush-handle.png" alt="">
+                                    <figure class="gallery__card">
+                                        <div class="gallery__item" data-slider data-state="before">
+                                            <img class="gallery__before" src="assets/before_2.jpg" alt="Front of house, before painting" loading="lazy" decoding="async">
+                                            <img class="gallery__after" src="assets/after_2.jpg" alt="Front of house, after painting" loading="lazy" decoding="async">
+                                            <span class="gallery__label gallery__label--before" aria-hidden="true">Before</span>
+                                            <span class="gallery__label gallery__label--after" aria-hidden="true">After</span>
+                                            <div class="gallery__handle">
+                                                <img class="gallery__handle-icon" src="assets/paintbrush-handle.png" alt="">
+                                            </div>
                                         </div>
-                                    </div>
+                                        <div class="gallery__toggle" role="group" aria-label="Front of house: show before or after">
+                                            <span class="gallery__toggle-thumb" aria-hidden="true"></span>
+                                            <button type="button" data-show="before" aria-pressed="true">Before</button>
+                                            <button type="button" data-show="after" aria-pressed="false">After</button>
+                                        </div>
+                                        <figcaption class="gallery__caption">Front of house</figcaption>
+                                    </figure>
 
-                                    <div class="gallery__item" data-slider>
-                                        <img class="gallery__before" src="assets/before_3.jpg" alt="House Before painting">
-                                        <img class="gallery__after" src="assets/after_3.jpg" alt="House After painting">
-                                        <div class="gallery__handle">
-                                            <img class="gallery__handle-icon" src="assets/paintbrush-handle.png" alt="">
+                                    <figure class="gallery__card">
+                                        <div class="gallery__item" data-slider data-state="before">
+                                            <img class="gallery__before" src="assets/before_3.jpg" alt="House exterior, before painting" loading="lazy" decoding="async">
+                                            <img class="gallery__after" src="assets/after_3.jpg" alt="House exterior, after painting" loading="lazy" decoding="async">
+                                            <span class="gallery__label gallery__label--before" aria-hidden="true">Before</span>
+                                            <span class="gallery__label gallery__label--after" aria-hidden="true">After</span>
+                                            <div class="gallery__handle">
+                                                <img class="gallery__handle-icon" src="assets/paintbrush-handle.png" alt="">
+                                            </div>
                                         </div>
+                                        <div class="gallery__toggle" role="group" aria-label="House exterior: show before or after">
+                                            <span class="gallery__toggle-thumb" aria-hidden="true"></span>
+                                            <button type="button" data-show="before" aria-pressed="true">Before</button>
+                                            <button type="button" data-show="after" aria-pressed="false">After</button>
+                                        </div>
+                                        <figcaption class="gallery__caption">House exterior</figcaption>
+                                    </figure>
+                                </div>
+
+                                <div class="gallery__feature">
+                                    <span class="gallery__feature-eyebrow">Time-lapse</span>
+                                    <h3 class="gallery__feature-title">Feature wall, start to finish.</h3>
+                                    <div class="gallery__video">
+                                        <video autoplay muted loop playsinline preload="metadata"
+                                               poster="assets/feature-wall-poster.jpg"
+                                               aria-label="Time-lapse of a bedroom feature wall being wallpapered">
+                                            <source src="assets/feature-wall.webm" type="video/webm">
+                                            <source src="assets/feature-wall.mp4" type="video/mp4">
+                                        </video>
                                     </div>
                                 </div>
                             </div>

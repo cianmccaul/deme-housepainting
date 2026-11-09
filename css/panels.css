@@ -2,6 +2,18 @@
   min-height: 100dvh;
 }
 
+/* Only the visible panel sets the page height. Without this, a short
+   panel (About) inherits the height of the tallest one (Gallery) and
+   leaves a big empty gap above the footer. */
+#panels {
+  align-items: flex-start;
+}
+
+.panel:not(.is-current) {
+  max-height: 100dvh;
+  overflow: hidden;
+}
+
 .panel {
     padding-top: 110px;
 }
@@ -48,10 +60,12 @@
 
 .footer__details {
   display: flex;
-  gap: var(--space-4);
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
 }
 
 .footer__details a {
+  white-space: nowrap;
   font-size: var(--text-sm);
   color: var(--color-white-plaster);
   border-bottom: 1px solid transparent;

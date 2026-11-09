@@ -102,9 +102,14 @@ function goToPanel(panelName) {
   if (idx === -1) return;
   currentPanel = idx;
   panelsTrack.style.transform = 'translateX(-' + (idx * 100) + 'vw)';
+  document.querySelectorAll('.panel').forEach(function (panel) {
+    panel.classList.toggle('is-current', panel.dataset.panel === panelName);
+  });
   setActiveNav(true);
   try {
-    if (stage.scrollTop < demeTriggerY()) {
+    // Coming from the landing page, or from further down another panel:
+    // land at the top of the new panel either way.
+    if (stage.scrollTop < demeTriggerY() || stage.scrollTop > stageHeight() + 4) {
       stage.scrollTo({ top: stageHeight(), behavior: 'smooth' });
     }
   } catch (err) {
