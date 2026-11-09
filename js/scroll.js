@@ -12,7 +12,6 @@ const siteNav = document.getElementById('site-nav');
 const panelsTrack = document.getElementById('panels');
 const menuToggle = document.getElementById('menu-toggle');
 const menuDrawer = document.getElementById('menu-drawer');
-const ctaBtn = document.getElementById('cta-btn');
 const menuCorner = document.getElementById('menu-corner');
 const logoCorner = document.getElementById('logo-corner');
 const toTopBtn = document.getElementById('to-top');
@@ -35,10 +34,6 @@ menuToggle.addEventListener('click', function () {
   const isOpen = menuToggle.classList.toggle('is-open');
   menuToggle.setAttribute('aria-expanded', String(isOpen));
   menuDrawer.classList.toggle('is-open', isOpen);
-});
-
-ctaBtn.addEventListener('click', function () {
-  this.classList.toggle('is-selected');
 });
 
 // ---- Footer copyright year (auto-updates, never goes stale) ----

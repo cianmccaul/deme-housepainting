@@ -49,8 +49,7 @@
               color var(--duration-base) var(--ease-standard);
 }
 
-.hero__cta:hover,
-.hero__cta.is-selected {
+.hero__cta:hover {
   background: var(--color-white-plaster);
   border-color: var(--color-navy);
   color: var(--color-navy);
