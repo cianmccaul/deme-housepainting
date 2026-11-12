@@ -2,7 +2,7 @@
 
 Website and contact form for **DEME Housepainting**, a family-run interior and exterior painting business run by Zoltan and his son Ben.
 
-**[Live site](https://demehousepainting.com)** · **[Portfolio](https://cianmccaul.vercel.app)**
+**[Live site](https://deme-housepainting.vercel.app)** · **[Portfolio](https://cianmccaul.vercel.app)**
 
 ![The DEME Housepainting home page](docs/screenshot.png)
 
