@@ -1,8 +1,10 @@
 # DEME Housepainting
 
-Website for **DEME Housepainting**, a family-run interior and exterior painting business run by Zoltan and his son Ben.
+Website and contact form for **DEME Housepainting**, a family-run interior and exterior painting business run by Zoltan and his son Ben.
 
-**Live site:** [demehousepainting.com](https://demehousepainting.com)
+**[Live site](https://deme-housepainting.vercel.app)** · **[Portfolio](https://cianmccaul.vercel.app)**
+
+![The DEME Housepainting home page](docs/screenshot.png)
 
 ## What it does
 
@@ -12,13 +14,9 @@ Website for **DEME Housepainting**, a family-run interior and exterior painting 
 - **Built for phones.** A dedicated phone nav bar, responsive layouts and app icons, so it can be saved to a home screen.
 - **Readable by AI search.** An `llms.txt` file describes the business for AI assistants and search tools.
 
-## Built with
+## How it works
 
-- HTML, CSS and vanilla JavaScript, with no framework, so the page stays fast
-- Vercel for hosting and the serverless contact function
-- Resend for email
-
-## Structure
+A single static page with no build step. The only server code is one Vercel function for the contact form: `js/scroll.js` posts the form to `/api/contact`, which checks the input (name and contact required, length limits) and sends the enquiry through Resend's API, with the key read from an environment variable.
 
 ```
 index.html        the single-page site
@@ -30,7 +28,7 @@ api/contact.js    serverless function that sends the enquiry email
 assets/           photos, video and logo
 ```
 
-## Running it locally
+## Run it locally
 
 It's a static site, so any local server works:
 
@@ -39,6 +37,16 @@ npx serve .
 ```
 
 The contact form needs the Vercel function plus two environment variables: `RESEND_API_KEY` and `CONTACT_EMAIL_TO` (where enquiries are sent). Run `vercel dev` with the key set to test it end to end.
+
+## Tests
+
+There are no automated tests yet.
+
+## Built with
+
+- HTML, CSS and vanilla JavaScript, with no framework, so the page stays fast
+- Vercel for hosting and the serverless contact function
+- Resend for email
 
 ---
 
