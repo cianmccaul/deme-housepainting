@@ -19,12 +19,21 @@ module.exports = async function handler(req, res) {
   }
 
   // Basic server-side validation — never trust the client alone.
-  // Basic server-side validation — never trust the client alone.
-  if (!name || !contact) {
-    return res.status(400).json({ error: 'Name and contact info are required.' });
+  if (
+    typeof name !== 'string' ||
+    typeof contact !== 'string' ||
+    typeof details !== 'string' ||
+    !name.trim() ||
+    !contact.trim()
+  ) {
+    return res.status(400).json({ error: 'Invalid submission.' });
   }
 
-  if (name.length > 200 || contact.length > 200 || (details && details.length > 5000)) {
+  if (
+    name.length > 200 ||
+    contact.length > 200 ||
+    details.length > 5000
+  ) {
     return res.status(400).json({ error: 'Submission too long.' });
   }
 
