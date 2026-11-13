@@ -54,6 +54,7 @@ contactForm.addEventListener('submit', async function (e) {
   const name = document.getElementById('name').value.trim();
   const contact = document.getElementById('contact-info').value.trim();
   const details = document.getElementById('details').value.trim();
+  const website = document.getElementById('website').value.trim();
 
   submitBtn.disabled = true;
   submitBtn.textContent = 'Sending…';
