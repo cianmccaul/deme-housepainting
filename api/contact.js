@@ -11,7 +11,12 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { name, contact, details } = req.body;
+  const { name, contact, details, website } = req.body;
+  // Honeypot spam protection — discard submissions where the hidden
+  // website field has been filled in by a bot.
+  if (typeof website === 'string' && website.trim() !== '') {
+    return res.status(200).json({ success: true });
+  }
 
   // Basic server-side validation — never trust the client alone.
   if (!name || !contact) {
