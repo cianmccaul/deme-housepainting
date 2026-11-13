@@ -193,6 +193,16 @@
                                 <h2 class="contact__title">Tell us about your project.</h2>
 
                                 <form class="contact__form" id="contact-form">
+                                <div aria-hidden="true" style="position:absolute; left:-10000px; width:1px; height:1px; overflow:hidden;">
+                                    <label for="website">Leave this field empty</label>
+                                    <input
+                                        type="text"
+                                        id="website"
+                                        name="website"
+                                        tabindex="-1"
+                                        autocomplete="off"
+                                    >
+                                </div>
                                 <div class="contact__field">
                                     <label for="name">Full Name</label>
                                     <input type="text" id="name" name="name" required>
