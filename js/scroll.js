@@ -63,7 +63,7 @@ contactForm.addEventListener('submit', async function (e) {
     const response = await fetch('/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, contact, details }),
+      body: JSON.stringify({ name, contact, details, website }),
     });
     if (!response.ok) throw new Error('Request failed');
 
