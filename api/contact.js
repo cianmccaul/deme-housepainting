@@ -32,7 +32,7 @@ module.exports = async function handler(req, res) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'DEME Housepainting Website <onboarding@resend.dev>',
+        from: 'DEME Housepainting <enquiries@demehousepainting.ie>',
         to: process.env.CONTACT_EMAIL_TO,
         // The field accepts "email or phone". Resend rejects a reply_to that
         // isn't an email address, which would lose phone-only enquiries -
