@@ -1,12 +1,14 @@
+
 # DEME Housepainting
 
-> Family-run interior and exterior house painting business, run by a father-son team. Based in Ireland.
+> Family-run interior and exterior house painting business, run by a father-son team and based in Ireland.
 
 DEME Housepainting provides interior and exterior house painting services, from single-room jobs to full exterior repaints.
 
 ## Pages
 
-- [Home](https://deme-housepainting.vercel.app/): Overview and quote request
-- [About Us](https://deme-housepainting.vercel.app/#about): Who runs the business
-- [Gallery](https://deme-housepainting.vercel.app/#gallery): Before and after photos of completed work
-- [Contact](https://deme-housepainting.vercel.app/#contact): Contact form for quotes and enquiries
+- [Home](https://www.demehousepainting.ie/): Overview of the business and quote enquiries.
+- [About Us](https://www.demehousepainting.ie/#about): Information about the people behind the business.
+- [Gallery](https://www.demehousepainting.ie/#gallery): Before-and-after photos of completed painting work.
+- [Contact](https://www.demehousepainting.ie/#contact): Contact form for quotes and enquiries.
+- [Privacy Policy](https://www.demehousepainting.ie/privacy.html): Privacy information for website visitors and contact-form enquiries.
