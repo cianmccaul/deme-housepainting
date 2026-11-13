@@ -19,6 +19,7 @@ module.exports = async function handler(req, res) {
   }
 
   // Basic server-side validation — never trust the client alone.
+  // Basic server-side validation — never trust the client alone.
   if (!name || !contact) {
     return res.status(400).json({ error: 'Name and contact info are required.' });
   }
