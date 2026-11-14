@@ -114,7 +114,7 @@
 
 .credit b {
   font-weight: var(--weight-medium);
-  color: var(--color-copper-light);
+  color: var(--color-copper);
   border-bottom: 1px solid transparent;
   transition: border-color var(--duration-fast) var(--ease-standard);
 }
