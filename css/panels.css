@@ -25,6 +25,8 @@
   flex-shrink: 0;
   background: var(--color-navy);
   padding: var(--space-4) var(--space-6);
+  /* Clear the fixed #to-top button (bottom: space-3, 44px tall) so it never covers the credit. */
+  padding-bottom: calc(var(--space-3) + 44px + var(--space-2));
 }
 
 .footer__inner {
@@ -82,9 +84,47 @@
 .footer__copyright {
   font-size: var(--text-xs);
   color: var(--color-white-plaster);
-  opacity: 0.55;
   width: 100%;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
   padding-top: var(--space-2);
   border-top: 1px solid rgba(240, 235, 223, 0.15);
+}
+
+.footer__copyright > span {
+  opacity: 0.55;
+}
+
+/* Agency credit: quiet like the copyright, copper name to match link hovers. */
+.credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  color: rgba(240, 235, 223, 0.7);
+  transition: color var(--duration-fast) var(--ease-standard);
+}
+
+.credit img {
+  border-radius: 4px;
+}
+
+.credit b {
+  font-weight: var(--weight-medium);
+  color: var(--color-copper-light);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--duration-fast) var(--ease-standard);
+}
+
+.credit:hover,
+.credit:focus-visible {
+  color: var(--color-white-plaster);
+}
+
+.credit:hover b,
+.credit:focus-visible b {
+  border-color: var(--color-copper-light);
 }
