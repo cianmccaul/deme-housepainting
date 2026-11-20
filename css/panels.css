@@ -45,13 +45,11 @@
   gap: 4px;
 }
 
-.footer__name {
-  font-family: var(--font-display);
-  font-weight: var(--weight-semibold);
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
-  font-size: var(--text-sm);
-  color: var(--color-white-plaster);
+.footer__logo {
+  display: block;
+  height: 84px;
+  width: auto;
+  margin-bottom: var(--space-1);
 }
 
 .footer__tagline {
